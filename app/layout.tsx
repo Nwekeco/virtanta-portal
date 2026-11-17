@@ -1,0 +1,6 @@
+import "./globals.css";
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Virtanta Client Portal", description: "Your Virtanta services, reports, billing and documents in one place.", icons: { icon: "/favicon.png" } };
+export default function Root({ children }: { children: React.ReactNode }) {
+  return <html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"/></head><body>{children}</body></html>;
+}
