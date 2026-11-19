@@ -21,7 +21,7 @@ export async function asUser(op: string, payload: Record<string, unknown> = {}) 
 
 export type Me = {
   user: { id: string; email: string; name: string | null; role: string; onboarding: { completed: string[]; dismissed: boolean } | null };
-  client: { company: string; market: string; currency: string; hasVirtantPay: boolean };
+  client: { reference?: string; company: string; market: string; currency: string; hasVirtantPay: boolean };
   modules: string[];
   services: { reference: string; title: string; status: string; currency: string; monthly: string; nextInvoiceAt: string | null; activatedAt: string | null;
     trial: { state: string | null; endsAt: string | null; days: number; continueUrl: string | null } | null;

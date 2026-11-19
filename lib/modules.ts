@@ -9,6 +9,7 @@ export function menu(modules: string[]): { main: Mod[]; workspaces: Mod[] } {
     { key: "services", label: "Services", href: "/services", icon: "layers" },
     { key: "billing", label: "Billing", href: "/billing", icon: "receipt" },
     { key: "documents", label: "Documents", href: "/documents", icon: "file" },
+    ...(has("orders") ? [{ key: "orders", label: "Orders", href: "/orders", icon: "cart" }] : []),
     { key: "support", label: "Support", href: "/support", icon: "chat" },
     { key: "team", label: "Team", href: "/team", icon: "users" },
   ];
@@ -33,6 +34,7 @@ export function walkthrough(modules: string[]) {
   if (has("calls")) steps.push({ key: "calls", title: "See your calls and reports", text: "Calls handled, response times, satisfaction and every case, updated through the day.", href: "/services#workspaces", cta: "Where to find reports" });
   if (has("knowledge")) steps.push({ key: "knowledge", title: "Write your knowledge base", text: "Draft the answers our agents use for your customers. Your version always takes priority.", href: "/services#workspaces", cta: "How the KB works" });
   if (has("tasks")) steps.push({ key: "tasks", title: "Send your assistant a first task", text: "Describe it, attach documents and follow progress until it's done.", href: "/services#workspaces", cta: "How tasks work" });
+  if (has("orders")) steps.push({ key: "orders", title: "Follow your orders", text: "Every order our team places for your customers, where it is, and its number in your system.", href: "/orders", cta: "Open orders" });
   if (has("payments")) steps.push({ key: "payments", title: "Set up payments", text: "Connect your accounting system and turn on the payment channels you want.", href: "/services#workspaces", cta: "Open payments" });
   steps.push({ key: "support", title: "Know where to get help", text: "Message the team from the portal; a person replies, never a bot.", href: "/support", cta: "Open support" });
   return steps;
