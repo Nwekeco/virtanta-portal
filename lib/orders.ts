@@ -11,3 +11,5 @@ export async function commerceOps(reference: string | undefined, params: Record<
   } catch { return { ok: false as const, body: null }; }
 }
 export const orderTone = (k: string) => (k === "synced" ? "ok" : ["exception", "hold"].includes(k) ? "bad" : k === "cancelled" ? "g" : "warn");
+export const rmaTone = (k: string) => (["refunded", "closed"].includes(k) ? "ok" : ["rejected", "cancelled"].includes(k) ? "g" : "warn");
+export const caseTone = (k: string) => (["resolved", "closed"].includes(k) ? "ok" : k === "pending_client" ? "bad" : "warn");
