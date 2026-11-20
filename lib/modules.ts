@@ -14,11 +14,10 @@ export function menu(modules: string[]): { main: Mod[]; workspaces: Mod[] } {
     { key: "team", label: "Team", href: "/team", icon: "users" },
   ];
   const ws: Mod[] = [];
-  const vcx = env("VCX_CLIENT_URL"), growth = env("GROWTH_CLIENT_URL"), vp = env("VIRTPAY_PORTAL_URL") || "https://virpay.virtanta.com/vpportal";
+  const vcx = env("VCX_CLIENT_URL"), vp = env("VIRTPAY_PORTAL_URL") || "https://virpay.virtanta.com/vpportal";
   if (has("calls") && vcx) ws.push({ key: "calls", label: "Calls & reporting", href: `${vcx}/client-dashboard`, icon: "phone", external: true });
   if (has("knowledge") && vcx) ws.push({ key: "knowledge", label: "Knowledge base", href: `${vcx}/knowledge-base`, icon: "book", external: true });
   if (has("tasks") && vcx) ws.push({ key: "tasks", label: "Assistant tasks", href: `${vcx}/tasks`, icon: "check", external: true });
-  if (has("growth") && growth) ws.push({ key: "growth", label: "Growth", href: growth, icon: "chart", external: true });
   if (has("payments")) ws.push({ key: "payments", label: "Payments workspace", href: vp, icon: "card", external: true });
   return { main, workspaces: ws };
 }
