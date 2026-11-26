@@ -23,7 +23,7 @@ export function Login() {
       <label className="field"><span>Password</span><input type="password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)}/></label>
       <button className="btn" disabled={busy}>{busy ? "Signing in…" : "Sign in"}</button></form>
     <div className="links"><a href="/forgot">Forgot password?</a><a href="https://www.virtanta.com/contact">Need access?</a></div>
-    <p className="muted small" style={{ marginTop: 18 }}>Using VirtantPay with an account number? <a href="https://virpay.virtanta.com/vpportal" style={{ color: "var(--blue)", fontWeight: 700 }}>Payments workspace sign-in</a></p>
+    <p className="muted small" style={{ marginTop: 18 }}>Using VirtantPay with an account number? <a href="https://virtantpay.virtanta.com/vpportal" style={{ color: "var(--blue)", fontWeight: 700 }}>Payments workspace sign-in</a></p>
   </Card>;
 }
 
